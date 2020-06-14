@@ -37,14 +37,16 @@ puts get_response.body
  Update the course name
 
 =end 
-	
 
-put_response = RestClient::Request.execute(method: :put,
+def self.updateCourseName
+	
+	put_response = RestClient::Request.execute(method: :put,
                                              url: 'https://canvas.instructure.com/api/v1/courses/2106760',
                                              payload: {"course[name]" => "Creative Writing"},
                                              headers: {"Authorization" => "Bearer 7~Ic2qTMmcJF3ci6LCGvf4Iw04XYdvKjeokVZzvsHOtJ1ppSLtXDLPo7bvacNC8XVq"})
+	puts " Updated course name is #{put_response}"
 
-puts " Updated course name is #{put_response}"
+end
 
 
 
